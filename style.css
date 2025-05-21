@@ -1,0 +1,107 @@
+body {
+    background: linear-gradient(120deg, #f5f7fa 0%, #c3cfe2 100%);
+    font-family: 'Montserrat', Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h1 {
+    color: #2d3142;
+    margin-top: 40px;
+    font-size: 2.2rem;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+#die1, #die2 {
+    margin: 18px 8px;
+    border-radius: 18px;
+    box-shadow: 0 2px 12px rgba(45,49,66,0.10);
+    background: #fff;
+    transition: transform 0.18s;
+    width: 90px;
+    max-width: 30vw;
+    animation: none;
+}
+
+#die1:hover, #die2:hover {
+    transform: scale(1.07) rotate(-4deg);
+}
+
+button {
+    background: linear-gradient(90deg, #4e54c8 0%, #8f94fb 100%);
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    padding: 13px 36px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(78,84,200,0.13);
+    margin-top: 18px;
+    transition: transform 0.18s, box-shadow 0.18s;
+    outline: none;
+    position: relative;
+    overflow: hidden;
+}
+
+button:active {
+    transform: scale(0.97);
+    box-shadow: 0 1px 4px rgba(78,84,200,0.10);
+}
+
+#result {
+    font-size: 1.2rem;
+    color: #2d3142;
+    margin-top: 22px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    min-height: 2em;
+}
+
+.shake {
+    animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+.roll {
+    animation: roll 1.5s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+@keyframes shake {
+    10%, 90% { transform: translateX(-2px) rotate(-5deg); }
+    20%, 80% { transform: translateX(4px) rotate(5deg); }
+    30%, 50%, 70% { transform: translateX(-8px) rotate(-8deg); }
+    40%, 60% { transform: translateX(8px) rotate(8deg); }
+    100% { transform: translateX(0) rotate(0); }
+}
+
+@keyframes roll {
+    0% { transform: rotate(0deg) scale(1); }
+    20% { transform: rotate(90deg) scale(1.1); }
+    40% { transform: rotate(180deg) scale(0.95); }
+    60% { transform: rotate(270deg) scale(1.08); }
+    80% { transform: rotate(360deg) scale(1); }
+    100% { transform: rotate(0deg) scale(1); }
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.1rem;
+    }
+    #die1, #die2 {
+        width: 48px;
+        margin: 8px 2px;
+    }
+    button {
+        padding: 8px 14px;
+        font-size: 0.95rem;
+    }
+    #result {
+        font-size: 1rem;
+    }
+}
